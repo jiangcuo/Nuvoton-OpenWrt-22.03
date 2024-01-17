@@ -38,6 +38,7 @@ define KernelPackage/bluetooth
 	CONFIG_BT_LE=y \
 	CONFIG_BT_RFCOMM \
 	CONFIG_BT_BNEP \
+  CONFIG_BT_AICBTUSB \
 	CONFIG_BT_HCIBTUSB \
 	CONFIG_BT_HCIBTUSB_BCM=n \
 	CONFIG_BT_HCIUART \
@@ -54,7 +55,8 @@ define KernelPackage/bluetooth
 	$(LINUX_DIR)/net/bluetooth/hidp/hidp.ko \
 	$(LINUX_DIR)/drivers/bluetooth/hci_uart.ko \
 	$(LINUX_DIR)/drivers/bluetooth/btusb.ko \
-	$(LINUX_DIR)/drivers/bluetooth/btintel.ko
+	$(LINUX_DIR)/drivers/bluetooth/btintel.ko \
+  $(LINUX_DIR)/drivers/bluetooth/aic_btusb.ko
   AUTOLOAD:=$(call AutoProbe,bluetooth rfcomm bnep hidp hci_uart btusb)
 endef
 

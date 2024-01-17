@@ -7,3 +7,5 @@ setspi=sf probe 0 30000000
 loadkernel=sf read 0x07fc0 0x200000 0x600000
 loaddtb=sf read 0x1400000 0x180000 0x20000
 bootcmd=run setspi;run loadkernel;run loaddtb;bootm 0x07fc0 - 0x1400000
+bootargs=noinitrd rootfstype=squashfs,ubifs console=ttyS0,115200n8 rdinit=/sbin/init mem=64M 
+mtdparts=nand0:0x180000@0x0(u-boot),0x20000@0x180000(dtb),-@0x200000(firmware)
