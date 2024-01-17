@@ -1,13 +1,15 @@
 #!/bin/sh /etc/rc.common
 START=1999
 start(){
-        /usr/share/opengw/opengw >/tmp/opengw.log &
+        echo "delay 120s for opengw start "
+        sleep 120;
+        /usr/share/opengw/opengw  &
 }
 
 stop(){
-       killall opengw &
+       killall /usr/share/opengw/opengw 
 }
 
 restart(){
-        killall opengw && /usr/share/opengw &
+        killall /usr/share/opengw/opengw && /usr/share/opengw &
 }

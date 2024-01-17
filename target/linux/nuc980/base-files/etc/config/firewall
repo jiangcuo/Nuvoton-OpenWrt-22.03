@@ -11,6 +11,7 @@ config zone
 	option forward 'ACCEPT'
 	list network 'eth0'
 	list network 'eth1'
+	list network '3g'
 
 config zone
 	option name 'wan'
@@ -21,7 +22,6 @@ config zone
 	option mtu_fix '1'
 	list network 'wan'
 	list network 'wan6'
-	list network '3g'
 
 config forwarding
 	option src 'lan'

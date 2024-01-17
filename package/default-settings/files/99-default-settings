@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#配置系统时区
+uci set system.@system[0].timezone=CST-8
+uci set system.@system[0].zonename=Asia/Shanghai
+uci commit system
+
+# 配置无线相关
+
+date1=`date +%Y%m%H%M%S`
+name="hanmbe-$date1"
+uci set wireless.radio0.disabled=0
+uci set wireless.radio0.cell_density='0'
+uci set wireless.default_radio0.ssid="$name"
+uci set wireless.default_radio0.encryption='psk2'
+uci set wireless.default_radio0.key="$name"
+uci commit wireless
+
+exit 0
