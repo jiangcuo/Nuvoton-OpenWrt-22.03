@@ -3,7 +3,7 @@ START=1999
 start(){
         echo "delay 120s for opengw start "
         sleep 120;
-        /usr/share/opengw/opengw  &
+        /usr/share/opengw/opengw  >/dev/null 2>&1 &
 }
 
 stop(){
@@ -11,5 +11,5 @@ stop(){
 }
 
 restart(){
-        killall /usr/share/opengw/opengw && /usr/share/opengw &
+        killall /usr/share/opengw/opengw && /usr/share/opengw/opengw >/dev/null 2>&1 &
 }

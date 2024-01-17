@@ -18,5 +18,4 @@ uci set wireless.default_radio0.mode='ap'
 uci set wireless.default_radio0.network='eth0'
 uci commit wireless
 
-
 exit 0
