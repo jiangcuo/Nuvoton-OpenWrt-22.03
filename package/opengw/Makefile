@@ -55,6 +55,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/etc/init.d/
 	$(INSTALL_BIN) ./root/usr/share/opengw/opengw $(1)/usr/share/opengw/
 	cp -r ./root/usr/share/opengw/webroot $(1)/usr/share/opengw/
+	cp -r ./root/usr/share/opengw/config $(1)/usr/share/opengw/
 	$(INSTALL_BIN) ./root/etc/init.d/opengw $(1)/etc/init.d/
 endef
 
