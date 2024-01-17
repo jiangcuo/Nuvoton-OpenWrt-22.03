@@ -1,0 +1,13 @@
+#!/bin/sh /etc/rc.common
+START=99
+start(){
+        /usr/share/opengw/opengw >/tmp/opengw.log
+}
+
+stop(){
+       killall openGW
+}
+
+restart(){
+        killall opengw && /usr/share/opengw >/tmp/opengw.log
+}
