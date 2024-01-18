@@ -22,12 +22,6 @@ endef
 
 
 define Package/$(PKG_NAME)/postinst
-#!/bin/sh
-if [ -z "$${IPKG_INSTAROOT}" ];then
-	/etc/init.d/opengw enable
-fi
-
-exit 0
 endef
 
 

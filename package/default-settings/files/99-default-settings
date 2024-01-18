@@ -1,5 +1,6 @@
 #!/bin/sh
 
+uci_set(){
 #配置系统时区
 uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
@@ -17,5 +18,8 @@ uci set wireless.default_radio0.key='hanmber'
 uci set wireless.default_radio0.mode='ap'
 uci set wireless.default_radio0.network='eth0'
 uci commit wireless
+}
+
+test -f /sbin/uci || uci_set
 
 exit 0
